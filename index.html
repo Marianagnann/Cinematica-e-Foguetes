@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Explorando Foguetes e Cinemática</title>
+</head>
+
+<body>
+  <button id="toggle-tema">Alternar Tema</button>
+
+  <div class="caixa-principal">
+    <!-- Aviso Inicial -->
+    <section class="aviso">
+      <h1>Prepare-se para o lançamento!</h1>
+      <p>
+        Ao menos uma única vez cada um de nós já parou para pensar o que é a imensidão azul
+        do dia ou da noite em nossas cabeças, e pensando nisso viemos com a sede e a ousadia
+        de demostrar o quão louca ou até mesmo capaz a nossa espécie é, fomos à lua,
+        explorando e descobrindo coisas inimagináveis.
+        <br><br>
+        Viemos aqui explicar como fomos tão longe. <strong>Prepare-se e preste muita atenção</strong>, após o final das
+        suas descobertas, perguntas serão feitas para demonstrar conhecimento e
+        entendimento sobre o assunto. Para os tópicos importantes para essas perguntas, será
+        posto um símbolo para identificação. (*).
+        <br><br>
+        Durante sua leitura de descobertas, fique com a seguinte pergunta em mente: <em>Será mesmo que o céu é o
+          limite?</em>
+      </p>
+      <button class="comecar-leitura-btn">Começar</button>
+    </section>
+
+    <!-- Textos informativos -->
+    <section class="textos" style="display:none">
+      <div class="conteudo">
+
+        <h2>UNIVERSO</h2>
+        <p>O universo é a totalidade do que existe: matéria, energia, espaço e tempo. Ele engloba todos os corpos
+          celestes, como planetas, estrelas, galáxias e a própria estrutura do espaço entre eles. Loucura, não é?</p>
+        <p>Essencialmente, o universo é tudo, e tudo o que conhecemos faz parte dele.</p>
+        <p><strong>Para entender melhor, e para os curiosos:</strong></p>
+        <ul>
+          <li><strong>Matéria e energia:</strong> O universo é composto por toda a matéria que conhecemos, desde a mais
+            densa (estrelas e planetas) até a mais rarefeita (como espaço entre as galáxias). Além disso, inclui todas
+            as formas de energia, como luz, calor e radiação.</li>
+          <li><strong>Espaço e tempo:</strong> O universo é o espaço onde tudo acontece, e o tempo é a dimensão que mede
+            a sequência dos eventos.</li>
+          <li><strong>Corpos celestes:</strong> O universo abriga bilhões de galáxias, cada uma com suas estrelas,
+            planetas, nebulosas e outros objetos celestes. Nossa galáxia, a Via Láctea, é apenas uma entre muitas.</li>
+          <li><strong>Expansão:</strong> O universo está em constante expansão, ou seja, o espaço entre as galáxias está
+            aumentando. Essa expansão é um dos principais indícios da teoria do Big Bang que explica a origem do
+            universo.</li>
+        </ul>
+
+        <h2>PLANETAS</h2>
+        <p>Para início de conversa sobre esse tema, vamos cumprimentar os nossos vizinhos cósmicos:</p>
+        <p><strong>O Sistema Solar</strong></p>
+        <p>O sistema Solar é como uma grande “família” de planetas que giram em volta do Sol, nossa estrela. Ele surgiu
+          há cerca de 4,6 bilhões de anos, a partir de uma nuvem gigante de gás e poeira no espaço. Essa nuvem começou a
+          girar, se comprimir, e no centro nasceu o Sol. O que sobrou virou os planetas, luas, asteroides e cometas.</p>
+        <p><em>*Vamos conhecer os 8 planetas do sistema solar, em ordem de distância do Sol:</em></p>
+        <ul>
+          <h3>☀️ Mercúrio</h3>
+          <ul>
+            <li><strong>Tamanho:</strong> O menor planeta.</li>
+            <li><strong>Composição:</strong> Feito de <strong>rochas e metal</strong> (muito ferro).</li>
+            <li><strong>Ambiente:</strong> Muito quente de dia, muito frio à noite.</li>
+            <li><strong>Curiosidade:</strong> Não tem atmosfera direito, então o calor do Sol bate direto.</li>
+          </ul>
+
+          <h3>☀️ Vênus</h3>
+          <ul>
+            <li><strong>Tamanho:</strong> Quase do tamanho da Terra.</li>
+            <li><strong>Composição:</strong> Rochoso, com uma <strong>atmosfera densa de gás carbônico</strong>.</li>
+            <li><strong>Ambiente:</strong> Super quente (mais que Mercúrio!) por causa do efeito estufa.</li>
+            <li><strong>Curiosidade:</strong> Os dias em Vênus são mais longos que os anos!</li>
+          </ul>
+
+          <h3>🌍 Terra</h3>
+          <ul>
+            <li><strong>Tamanho:</strong> Tamanho médio.</li>
+            <li><strong>Composição:</strong> Rochoso, com atmosfera rica em oxigênio e nitrogênio.</li>
+            <li><strong>Ambiente:</strong> Temperatura amena, com água em estado líquido e vida.</li>
+            <li><strong>Curiosidade:</strong> Até hoje é o único planeta com vida que conhecemos!</li>
+          </ul>
+
+          <h3>🔴 Marte</h3>
+          <ul>
+            <li><strong>Tamanho:</strong> Menor que a Terra.</li>
+            <li><strong>Composição:</strong> Rochoso, com solo rico em óxido de ferro (por isso é vermelho).</li>
+            <li><strong>Ambiente:</strong> Frio e seco, com tempestades de poeira.</li>
+            <li><strong>Curiosidade:</strong> Já teve água líquida e pode ter abrigado vida no passado.</li>
+          </ul>
+
+          <h3>🟠 Júpiter</h3>
+          <ul>
+            <li><strong>Tamanho:</strong> O maior planeta do sistema solar.</li>
+            <li><strong>Composição:</strong> Gasoso, feito principalmente de hidrogênio e hélio.</li>
+            <li><strong>Ambiente:</strong> Ventos violentos e tempestades como a Grande Mancha Vermelha.</li>
+            <li><strong>Curiosidade:</strong> Tem mais de 70 luas, incluindo a maior de todas: Ganimedes.</li>
+          </ul>
+
+          <h3>🪐 Saturno</h3>
+          <ul>
+            <li><strong>Tamanho:</strong> Segundo maior planeta do sistema solar.</li>
+            <li><strong>Composição:</strong> Gasoso, semelhante a Júpiter.</li>
+            <li><strong>Ambiente:</strong> Ventos intensos e temperaturas baixíssimas.</li>
+            <li><strong>Curiosidade:</strong> Possui anéis compostos de gelo e rochas.</li>
+          </ul>
+
+          <h3>🔵 Urano</h3>
+          <ul>
+            <li><strong>Tamanho:</strong> Terceiro maior planeta.</li>
+            <li><strong>Composição:</strong> Gelo e gás, rico em metano.</li>
+            <li><strong>Ambiente:</strong> Muito frio, com ventos ecléticos.</li>
+            <li><strong>Curiosidade:</strong> Gira "de lado", ou seja, tem rotação inclinada em 98°!</li>
+          </ul>
+
+          <h3>🔵 Netuno</h3>
+          <ul>
+            <li><strong>Tamanho:</strong> Um pouco menor que Urano.</li>
+            <li><strong>Composição:</strong> Gelo e gás, também com muito metano.</li>
+            <li><strong>Ambiente:</strong> Extremamente frio e com ventos mais rápidos do sistema solar.</li>
+            <li><strong>Curiosidade:</strong> É o planeta mais distante do Sol.</li>
+          </ul>
+        </ul>
+
+        <p>Já que acabamos de cumprimentar nossos vizinhos, vamos limpar os pés e entrar em
+          nossa casa:</p>
+
+        <h2>TERRA</h2>
+        <p> A Terra é o terceiro planeta a partir do Sol e o único que, até hoje, sabemos que abriga
+          vida, Ela tem cerca de 12.742 km de diâmetro e uma superfície coberta em 71% por
+          água, o que a torna única entre os planetas do sistema solar. Sua atmosfera, rica em
+          oxigênio e nitrogênio, ajuda a regular a temperatura e proteger a vida dos efeitos
+          nocivos do Sol, como a Radiação intensa.</p>
+
+        <p> Uma das grandes curiosidades da Terra é o seu campo magnético, gerado pelo
+          movimento de ferro e níquel no núcleo, que nos protege de partículas solares perigosas.
+          Além disso, a lua, que é nosso satélite natural, tem um papel fundamental na Terra. Ela
+          influencia as marés e estabiliza a rotação do planeta, evitando que ele oscile demais ao
+          longo do tempo, o que ajudaria a manter o clima estável.</p>
+
+        <p> Em resumo, a terra não é só o nosso lar, mas um planeta cheio de características e
+          processos únicos que fazem dela um lugar extraordinário no vasto universo.</p>
+
+        <p> Inacreditável a cada momento pensar que um longo processo evolutivo, com
+          contribuições de muitos cientistas ao longo da historia foi necessário para chegar onde
+          estamos hoje. Nicolau Copérnico com o modelo heliocêntrico, Galileu Galilei, com suas
+          observações telescópicas, Johannes Kepler, com a formulação das leis de movimento
+          planetário, Edwin Hubble com a expansão do universo, e não podemos esquecer de
+          Tycho Brahe, Isaac Newton e Georges Lemaître, que fizeram contribuições muito
+          importantes para a compreensão do universo e dos planetas.</p>
+
+        <p> Então, para não perdemos o que ainda não descobrimos foram criadas as agências
+          espaciais ao redor do mundo, cada uma delas com seu foco e responsabilidade:
+        </p>
+
+        <h2>*AGÊNCIAS ESPACIAIS</h2>
+        <p> Principais Agências Espaciais:</p>
+        <ul>
+          <li><strong>NASA(Estados Unidos):</strong> Administração Nacional de Aeronáutica e do Espaço é
+            a agência espacial dos EUA, responsável por uma vasta gama de atividades,
+            incluindo exploração espacial, pesquisa científica e desenvolvimento
+            tecnológico.</li>
+          <li><strong>ESA(Agencia Espacial Europeia):</strong>É uma organização intergovernamental
+            composta por vários países europeus, com o objetivo de coordenar e promover
+            atividades espaciais em nível europeu.</li>
+          <li><strong>ROSCOSMOS(Rússia):</strong>A Agência Espacial Federal Russa é a agência
+            responsável por lançamentos espaciais, pesquisa e exploração.</li>
+          <li><strong>JAXA(Japão):</strong>Agência de Exploração Aeroespacial do Japão é focada em
+            pesquisa e desenvolvimento espacial, incluindo missões e exploração e
+            tecnologia de satélites.</li>
+          <li><strong>ISRO(Índia):</strong>A organização de Pesquisa Espacial Indiana é responsável por
+            projetos de exploração espacial, lançamentos de satélites e desenvolvimento
+            tecnológico.</li>
+          <li><strong>CNSA(China):</strong> A Administração Espacial Nacional da China é responsável por
+            programas espaciais e exploração.</li>
+
+          <p> Além das principais, muitas outras agências espaciais nacionais desempenham
+            papéis importantes, como:</p>
+
+          <li><strong>CNES(França):</strong>Agência Espacial Francesa.</li>
+          <li><strong>AEB(Brasil):</strong>Agência Espacial Brasileira.</li>
+          <li><strong>UKSpaceAgency(Reino Unido):</strong>Agência Espacial do Reino Unido.</li>
+          <li><strong>AEM(México):</strong>Agência Espacial Mexicana.</li>
+          <li><strong>SANSA(África do Sul):</strong>Agência Espacial Nacional Sul-Africana</li>
+          <li><strong>UAESA(Emirados Árabes Unidos):</strong>Agência Espacial dos Emirados Árabes Unidos.</li>
+        </ul>
+        <p> Cada ideia foi um ponto de partida, então, que tal falarmos e conhecermos um ponto de
+          partida grande agora?</p>
+
+        <h2>FOGUETES</h2>
+        <p> *Como os Foguetes Espaciais Foram Criados?</p>
+
+        <p>A ideia de foguetes não é nova. Ela nasceu na China antiga, por volta do século XIII,
+          com a invenção da pólvora. Os primeiros “foguetes” eram basicamente flechas com
+          tubos cheios de pólvora presos a elas, usados em festivais e como armas. Imagine só a
+          surpresa dos inimigos quando viam essas flechas voadoras indo na direção deles!</p>
+
+        <p> Com o tempo, as pessoas começaram a pensar em como usar essa tecnologia para ir
+          mais longe. É quase como aquela frase de StarTrek: <em>“Audaciosamente indo onde
+            nenhum homem jamais esteve”.</em> Mas foi só no início do século XX que alguns gênios
+          começaram a transformar a ficção científica em realidade:</p>
+        <ul>
+          <ul>
+            <li>Kontstantin Tsiolkovsky (Rússia): Ele é considerado o “pai da astronáutica”. No
+              final do século XIX e início do século XX, ele desenvolveu as equações que
+              descrevem o movimento de foguetes e propôs o uso de propelentes líquidos,
+              algo revolucionário para a época.</li>
+          </ul>
+          <ul>
+            <li>Robert Goddard (EUA): Em 1926, ele lançou o primeiro foguete movido a
+              propelente líquido (é uma substância, geralmente um combustível e um
+              oxidante, que é usada para gerar empuxo através da combustão), da história. Era
+              pequeno, voou por poucos segundos, mas foi um passo gigantesco.</li>
+          </ul>
+          <ul>
+            <li> HermannOberth (Romênia/Alemanha): Ele também fez contribuições
+              importantes para a teoria de foguetes e inspirou muitos engenheiros.</li>
+          </ul>
+        </ul>
+        <p>A grande virada aconteceu durante a Segunda Guerra Mundial, quando a Alemanha
+          desenvolveu o foguete V-2. Embora fosse uma arma, ele foi o primeiro míssil
+          balístico de longo alcance e abriu o caminho para a exploração para a exploração
+          espacial. Muitos cientistas que trabalharam no V-2 foram para os EUA e a União
+          Soviética depois da guerra, e eles foram cruciais na corrida espacial.</p>
+        <p> OFoguete mais importante já feito:</p>
+
+        <p>O Saturno V é, sem dúvida, um dos mais icônicos e importantes da história. Ele
+          foi projetado e construído pela NASA nos EUA e usado no Programa Apollo para
+          levar astronautas à Lua entre 1969 e 1972. Pense em algo do tamanho de um prédio
+          de 36 andares, pesando quase 3 milhões de quilos no lançamento. É muita coisa. O
+          Saturno V foi o foguete mais poderoso já construído e usado com sucesso para voos
+          espaciais tripulados. Ele não só levou os primeiros humanos de superar desafios
+          incríveis. Sem ele, a humanidade não teria pisado em outro corpo celeste.</p>
+
+        <h2>*A FÍSICA POR TRÁS DOS FOGUETES</h2>
+        <p>A ideia central do funcionamento de um foguete é a Terceira Lei de Newton: Ação e
+          Reação.</p>
+        <p><strong>Tipos de energia:</strong></p>
+        <ul>
+          <li>Química → no combustível</li>
+          <li>Térmica → na queima</li>
+          <li>Cinética → nos gases e no foguete em movimento</li>
+          <li>Potencial gravitacional → ao subir na atmosfera</li>
+        </ul>
+        <p>Formulários úteis:</p>
+        <ul>
+          <li>Energia Cinética: E = m.v² / 2</li>
+          <li>Energia Potencial Gravitacional: Epg = m.g.h</li>
+        </ul>
+        <p><strong>Curiosidades:</strong> múltiplos estágios, atmosfera gera arrasto, foguetes reutilizáveis (como da
+          SpaceX), e necessidade de atingir 40.270 km/h para escapar da gravidade terrestre.</p>
+
+        <!-- Botão final dos textos -->
+        <button class="iniciar-quiz-btn">Iniciar Quiz</button>
+      </div>
+    </section>
+
+    <!-- Quiz -->
+    <section class="quiz" style="display:none">
+      <div class="caixa-perguntas"></div>
+      <div class="caixa-alternativas"></div>
+      <div class="caixa-resultado">
+        <p class="texto-resultado"></p>
+        <button class="novamente-btn">Jogar novamente</button>
+      </div>
+    </section>
+  </div>
+
+  <script type="module" src="JS/perguntas.js"></script>
+  <script type="module" src="JS/script.js"></script>
+  <script src="JS/tema.js"></script>
+</body>
+
+</html>
