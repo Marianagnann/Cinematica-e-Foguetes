@@ -1,25 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Inter:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap');
 
 :root {
   --cor-fundo: #0b0f19;
   --cor-caixa: #1a1f2b;
   --cor-texto: #f4f4f4;
-  --cor-destaque: #ff6b35;
+  --cor-destaque: #03ff9c;
   --cor-secundaria: #2e4057;
 }
-
+/*#a746db*/
 [data-tema="claro"] {
   --cor-fundo: #f4f9ff;
   --cor-caixa: #ffffff;
   --cor-texto: #222;
-  --cor-destaque: #ff914d;
+  --cor-destaque: #4d77ff;
   --cor-secundaria: #dbe9f4;
 }
 
 body {
   background-color: var(--cor-fundo);
   color: var(--cor-texto);
-  font-family: 'Inter', sans-serif;
+  font-family: "Tinos", serif;
+  font-size: 20px;
   margin: 0;
   padding: 0;
   display: flex;
@@ -42,7 +44,7 @@ section {
 }
 
 h1, h2 {
-  font-family: 'Chakra Petch', sans-serif;
+  font-family:"Google Sans Code", monospace;;
   color: var(--cor-destaque);
 }
 
