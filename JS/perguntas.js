@@ -68,10 +68,10 @@ export const perguntas = [
   {
     enunciado: "Qual cientista é considerado o pai da astronáutica e sua principal contribuição?",
     alternativas: [
-      { texto: "Robert Goddard", correta: false },
-      { texto: "Hermann Oberth", correta: false },
+      { texto: "Robert Goddard - Lançou o primeiro foguete movido a propelente líquido.", correta: false },
+      { texto: "Hermann Oberth - Formulou a Teoria do Voo Espacial.", correta: false },
       { texto: "Konstantin Tsiolkovsky - Equações do movimento de foguetes e propelente líquido.", correta: true },
-      { texto: "Um cientista anônimo da China Antiga", correta: false }
+      { texto: "Um cientista anônimo da China Antiga – Criou os primeiros foguetes com pólvora no século XIII.", correta: false }
     ]
   },
   {
@@ -85,11 +85,11 @@ export const perguntas = [
     ]
   },
   {
-    enunciado: "Um atleta ao correr empurra a Terra para trás. A reação dessa ação será:",
+    enunciado: "Um atleta ao correr empurra a terra para trás. A reação dessa ação será:",
     alternativas: [
-      { texto: "A Terra empurra o atleta para frente.", correta: true },
-      { texto: "A Terra gira devido ao empurrão.", correta: false },
-      { texto: "A Terra empurra o atleta para trás.", correta: false },
+      { texto: "A terra empurra o atleta para frente.", correta: true },
+      { texto: "A terra gira devido ao empurrão.", correta: false },
+      { texto: "A terra empurra o atleta para trás.", correta: false },
       { texto: "Não existe reação nesse caso.", correta: false },
       { texto: "O atleta não se move devido ao atrito.", correta: false }
     ]

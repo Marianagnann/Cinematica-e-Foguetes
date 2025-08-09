@@ -1,5 +1,7 @@
 import { perguntas } from "./perguntas.js";
 
+const body = document.body;
+
 const comecarLeituraBtn = document.querySelector(".comecar-leitura-btn");
 const iniciarQuizBtn = document.querySelector(".iniciar-quiz-btn");
 const novamenteBtn = document.querySelector(".novamente-btn");
@@ -16,16 +18,31 @@ const textoResultado = document.querySelector(".texto-resultado");
 let indicePergunta = 0;
 let acertos = 0;
 
-comecarLeituraBtn.onclick = () => {
+comecarLeituraBtn.addEventListener('click', () => {
+  body.classList.remove('fundo-padrao', 'fundo-quiz');
+  body.classList.add('fundo-textos');
+
   secaoAviso.style.display = "none";
   secaoTextos.style.display = "block";
-};
+});
 
-iniciarQuizBtn.onclick = () => {
+iniciarQuizBtn.addEventListener('click', () => {
+  body.classList.remove('fundo-padrao', 'fundo-textos');
+  body.classList.add('fundo-quiz');
+
   secaoTextos.style.display = "none";
   secaoQuiz.style.display = "block";
   iniciarQuiz();
-};
+});
+
+novamenteBtn.addEventListener('click', () => {
+  body.classList.remove('fundo-textos', 'fundo-quiz');
+  body.classList.add('fundo-padrao');
+
+  // Aqui você pode resetar a visualização pra aviso e esconder quiz, por exemplo
+  secaoQuiz.style.display = "none";
+  secaoAviso.style.display = "block";
+});
 
 function iniciarQuiz() {
   indicePergunta = 0;

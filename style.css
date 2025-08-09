@@ -3,30 +3,57 @@
 
 :root {
   --cor-fundo: #0b0f19;
-  --cor-caixa: #1a1f2b;
-  --cor-texto: #f4f4f4;
-  --cor-destaque: #03ff9c;
+  --cor-caixa: #141e30;
+  --cor-texto: #f1eaea;
+  --cor-destaque: #762dff;
+  --cor-realce: #9a64ff;
   --cor-secundaria: #2e4057;
 }
-/*#a746db*/
+/*#03ff9c*/
 [data-tema="claro"] {
   --cor-fundo: #f4f9ff;
   --cor-caixa: #ffffff;
-  --cor-texto: #222;
+  --cor-texto: #000000;
   --cor-destaque: #4d77ff;
+  --cor-realce: #4da0ff;
   --cor-secundaria: #dbe9f4;
 }
 
 body {
-  background-color: var(--cor-fundo);
   color: var(--cor-texto);
   font-family: "Tinos", serif;
-  font-size: 20px;
+  font-size: 23px;
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   min-height: 100vh;
+}
+
+/* Fundo padrão - só cor */
+body.fundo-padrao {
+  background-color: var(--cor-fundo);
+  background-image: none;
+}
+
+/* Fundo para seção textos */
+body.fundo-textos {
+  background-image: url('caminho/para/imagem-textos.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: var(--cor-texto); /* para manter texto visível */
+}
+
+/* Fundo para seção quiz */
+body.fundo-quiz {
+  background-image: url('caminho/para/imagem-quiz.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: var(--cor-texto);
 }
 
 .caixa-principal {
@@ -44,7 +71,8 @@ section {
 }
 
 h1, h2 {
-  font-family:"Google Sans Code", monospace;;
+  font-family:"Google Sans Code", monospace;
+  font-size: 28px;
   color: var(--cor-destaque);
 }
 
@@ -54,14 +82,14 @@ button {
   border: none;
   padding: 10px 20px;
   border-radius: 10px;
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin-top: 15px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
 }
 
 button:hover {
-  background-color: var(--cor-destaque);
+  background-color: var(--cor-realce);
   color: var(--cor-caixa);
 }
 
@@ -94,7 +122,7 @@ img {
   border-radius: 8px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 60px) {
   body {
     padding: 10px;
   }
