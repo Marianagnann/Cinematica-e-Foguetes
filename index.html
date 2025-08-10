@@ -9,6 +9,7 @@
 </head>
 
 <body class="fundo-padrao">
+
   <button id="toggle-tema">Alternar Tema</button>
 
   <div class="caixa-principal">
@@ -25,20 +26,22 @@
         suas descobertas, perguntas serão feitas para demonstrar conhecimento e
         entendimento sobre o assunto. Para os tópicos importantes para essas perguntas, será
         posto um símbolo para identificação. (*).
-        <h2>Leia com precisão Cosmonauta! Erros são como buracos negros - podem engolir o sentido todo!</h2>
-        Durante sua leitura de descobertas, fique com a seguinte pergunta em mente: <em>Será mesmo que o céu é o
-          limite?</em>
+      <h2>Leia com precisão Cosmonauta! Erros são como buracos negros - podem engolir o sentido todo!</h2>
+      Durante sua leitura de descobertas, fique com a seguinte pergunta em mente: <em>Será mesmo que o céu é o
+        limite?</em>
       </p>
       <button class="comecar-leitura-btn">Começar</button>
     </section>
 
     <!-- Textos informativos -->
     <section class="textos" style="display:none">
+      <!-- Wrapper para o conteúdo do texto -->
       <div class="conteudo">
 
         <h2>Universo</h2>
         <p>O Universo é a totalidade do que existe: matéria, energia, espaço e tempo. Ele engloba todos os corpos
           celestes, como planetas, estrelas, galáxias e a própria estrutura do espaço entre eles. Loucura, não é?</p>
+        <img class="universo" src="img/universo.jpg" alt="Universo">
         <p>Essencialmente, o universo é tudo, e tudo o que conhecemos faz parte dele.</p>
         <p><strong>Para entender melhor, e para os curiosos:</strong></p>
         <ul>
@@ -57,80 +60,125 @@
         <h2>Planetas</h2>
         <p>Para início de conversa sobre esse tema, vamos cumprimentar os nossos vizinhos cósmicos:</p>
         <p><strong>O Sistema Solar</strong></p>
-        <p>O sistema Solar é como uma grande “família” de planetas que giram em volta do Sol, nossa estrela. Ele surgiu
+        <p>O sistema Solar é como uma grande "família" de planetas que giram em volta do Sol, nossa estrela. Ele surgiu
           há cerca de 4,6 bilhões de anos, a partir de uma nuvem gigante de gás e poeira no espaço. Essa nuvem começou a
           girar, se comprimir, e no centro nasceu o Sol. O que sobrou virou os planetas, luas, asteroides e cometas.</p>
         <p><em>*Vamos conhecer os 8 planetas do sistema solar, em ordem de distância do Sol:</em></p>
-        <ul>
-          <h3>☀️ Mercúrio</h3>
-          <ul>
-            <li><strong>Tamanho:</strong> O menor planeta.</li>
-            <li><strong>Composição:</strong> Feito de <strong>rochas e metal</strong> (muito ferro).</li>
-            <li><strong>Ambiente:</strong> Muito quente de dia, muito frio à noite.</li>
-            <li><strong>Curiosidade:</strong> Não tem atmosfera direito, então o calor do Sol bate direto.</li>
-          </ul>
 
-          <h3>☀️ Vênus</h3>
-          <ul>
-            <li><strong>Tamanho:</strong> Quase do tamanho da Terra.</li>
-            <li><strong>Composição:</strong> Rochoso, com uma <strong>atmosfera densa de gás carbônico</strong>.</li>
-            <li><strong>Ambiente:</strong> Super quente (mais que Mercúrio!) por causa do efeito estufa.</li>
-            <li><strong>Curiosidade:</strong> Os dias em Vênus são mais longos que os anos!</li>
-          </ul>
+        <div class="planeta">
+          <img src="img/Mercúrio.png" alt="Planeta Mercúrio">
+          <div class="texto-planeta">
+            <h3>Mercúrio</h3>
+            <ul>
+              <li><strong>Tamanho:</strong> O menor planeta.</li>
+              <li><strong>Composição:</strong> Feito de <strong>rochas e metal</strong> (muito ferro).</li>
+              <li><strong>Ambiente:</strong> Muito quente de dia, muito frio à noite.</li>
+              <li><strong>Curiosidade:</strong> Não tem atmosfera direito, então o calor do Sol bate direto.</li>
+            </ul>
+          </div>
+        </div>
 
-          <h3>🌍 Terra</h3>
-          <ul>
-            <li><strong>Tamanho:</strong> Tamanho médio.</li>
-            <li><strong>Composição:</strong> Rochoso, com atmosfera rica em oxigênio e nitrogênio.</li>
-            <li><strong>Ambiente:</strong> Temperatura amena, com água em estado líquido e vida.</li>
-            <li><strong>Curiosidade:</strong> Até hoje é o único planeta com vida que conhecemos!</li>
-          </ul>
+        <div class="planeta">
+          <img src="img/Venus.jpg" alt="Planeta Vênus">
+          <div class="texto-planeta">
+            <h3>Vênus</h3>
+            <ul>
+              <li><strong>Tamanho:</strong> Quase do tamanho da Terra.</li>
+              <li><strong>Composição:</strong> Rochoso, com uma <strong>atmosfera densa de gás carbônico</strong>.</li>
+              <li><strong>Ambiente:</strong> Super quente (mais que Mercúrio!) por causa do efeito estufa.</li>
+              <li><strong>Curiosidade:</strong> Os dias em Vênus são mais longos que os anos!</li>
+            </ul>
+          </div>
+        </div>
 
-          <h3>🔴 Marte</h3>
-          <ul>
-            <li><strong>Tamanho:</strong> Menor que a Terra.</li>
-            <li><strong>Composição:</strong> Rochoso, com solo rico em óxido de ferro (por isso é vermelho).</li>
-            <li><strong>Ambiente:</strong> Frio e seco, com tempestades de poeira.</li>
-            <li><strong>Curiosidade:</strong> Já teve água líquida e pode ter abrigado vida no passado.</li>
-          </ul>
+        <div class="planeta">
+          <img src="img/Terra.webp" alt="Planeta Terra">
+          <div class="texto-planeta">
+            <h3>Terra</h3>
+            <ul>
+              <li><strong>Tamanho:</strong> Médio.</li>
+              <li><strong>Composição:</strong> Rochoso, com <strong>água, ar e vida</strong>.</li>
+              <li><strong>Ambiente:</strong> Temperado, com atmosfera ideal para seres vivos.</li>
+              <li><strong>Curiosidade:</strong> É o único planeta com vida que conhecemos.
+              </li>
+            </ul>
+          </div>
+        </div>
 
-          <h3>🟠 Júpiter</h3>
-          <ul>
-            <li><strong>Tamanho:</strong> O maior planeta do sistema solar.</li>
-            <li><strong>Composição:</strong> Gasoso, feito principalmente de hidrogênio e hélio.</li>
-            <li><strong>Ambiente:</strong> Ventos violentos e tempestades como a Grande Mancha Vermelha.</li>
-            <li><strong>Curiosidade:</strong> Tem mais de 70 luas, incluindo a maior de todas: Ganimedes.</li>
-          </ul>
+        <div class="planeta">
+          <img src="img/Marte.jpg" alt="Planeta Marte">
+          <div class="texto-planeta">
+            <h3>Marte</h3>
+            <ul>
+              <li><strong>Tamanho:</strong> Menor que a Terra.</li>
+              <li><strong>Composição:</strong> Rochoso, com solo rico em <strong>óxido de ferro</strong> (por isso é
+                vermelho).</li>
+              <li><strong>Ambiente:</strong> Frio e seco, com tempestades de poeira.</li>
+              <li><strong>Curiosidade:</strong> Pode ter tido água líquida há bilhões de anos.</li>
+            </ul>
+          </div>
+        </div>
 
-          <h3>🪐 Saturno</h3>
-          <ul>
-            <li><strong>Tamanho:</strong> Segundo maior planeta do sistema solar.</li>
-            <li><strong>Composição:</strong> Gasoso, semelhante a Júpiter.</li>
-            <li><strong>Ambiente:</strong> Ventos intensos e temperaturas baixíssimas.</li>
-            <li><strong>Curiosidade:</strong> Possui anéis compostos de gelo e rochas.</li>
-          </ul>
+        <div class="planeta">
+          <img src="img/Jupiter.jpg" alt="Planeta Júpiter">
+          <div class="texto-planeta">
+            <h3>Júpiter</h3>
+            <ul>
+              <li><strong>Tamanho:</strong> O maior planeta do sistema solar.</li>
+              <li><strong>Composição:</strong> Gasoso, feito principalmente de <strong>hidrogênio e hélio</strong>, sem
+                superfície sólida.</li>
+              <li><strong>Ambiente:</strong> Ventos violentos e tempestades como a Grande Mancha Vermelha.</li>
+              <li><strong>Curiosidade:</strong> Tem mais de 90 luas, incluindo a maior de todas: Ganimedes.</li>
+            </ul>
+          </div>
+        </div>
 
-          <h3>🔵 Urano</h3>
-          <ul>
-            <li><strong>Tamanho:</strong> Terceiro maior planeta.</li>
-            <li><strong>Composição:</strong> Gelo e gás, rico em metano.</li>
-            <li><strong>Ambiente:</strong> Muito frio, com ventos ecléticos.</li>
-            <li><strong>Curiosidade:</strong> Gira "de lado", ou seja, tem rotação inclinada em 98°!</li>
-          </ul>
+        <div class="planeta">
+          <img src="img/Saturno.png" alt="Planeta Saturno">
+          <div class="texto-planeta">
+            <h3>Saturno</h3>
+            <ul>
+              <li><strong>Tamanho:</strong> Segundo maior planeta do sistema solar.</li>
+              <li><strong>Composição:</strong> Gasoso, feito principalmente de <strong>hidrogênio</strong>.</li>
+              <li><strong>Ambiente:</strong> Ventos intensos e temperaturas baixíssimas.</li>
+              <li><strong>Curiosidade:</strong> Tem os <strong>anéis mais bonitos</strong> do sistema solar, feitos de
+                gelo e pedras.</li>
+            </ul>
+          </div>
+        </div>
 
-          <h3>🔵 Netuno</h3>
-          <ul>
-            <li><strong>Tamanho:</strong> Um pouco menor que Urano.</li>
-            <li><strong>Composição:</strong> Gelo e gás, também com muito metano.</li>
-            <li><strong>Ambiente:</strong> Extremamente frio e com ventos mais rápidos do sistema solar.</li>
-            <li><strong>Curiosidade:</strong> É o planeta mais distante do Sol.</li>
-          </ul>
-        </ul>
+        <div class="planeta">
+          <img src="img/Urano.jpg" alt="Planeta Urano">
+          <div class="texto-planeta">
+            <h3>Urano</h3>
+            <ul>
+              <li><strong>Tamanho:</strong> Grande, mas menor que Saturno.</li>
+              <li><strong>Composição:</strong> Gelo, gás, e um pouco de rocha.</li>
+              <li><strong>Ambiente:</strong> Super frio e gira "de lado", ou seja, tem rotação inclinada em 98°!</li>
+              <li><strong>Curiosidade:</strong> A cor azul-esverdeada vem do gás metano.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="planeta">
+          <img src="img/Netuno.jpg" alt="Planeta Netuno">
+          <div class="texto-planeta">
+            <h3>Netuno</h3>
+            <ul>
+              <li><strong>Tamanho:</strong> Um pouco menor que Urano.</li>
+              <li><strong>Composição:</strong> Gelo e gás, também com muito metano.</li>
+              <li><strong>Ambiente:</strong> Extremamente frio e com <strong>ventos mais rápidos que qualquer
+                  planeta</strong>.</li>
+              <li><strong>Curiosidade:</strong> É o planeta mais distante do Sol.</li>
+            </ul>
+          </div>
+        </div>
 
         <p>Já que acabamos de cumprimentar nossos vizinhos, vamos limpar os pés e entrar em
           nossa casa:</p>
 
         <h2>Terra</h2>
+        <img class="vista" src="img/vista da Terra.jpg" alt="Vista da Terra a partir da superfície lunar">
         <p> A Terra é o terceiro planeta a partir do Sol e o único que, até hoje, sabemos que abriga
           vida, Ela tem cerca de 12.742 km de diâmetro e uma superfície coberta em 71% por
           água, o que a torna única entre os planetas do sistema solar. Sua atmosfera, rica em
@@ -158,8 +206,9 @@
           espaciais ao redor do mundo, cada uma delas com seu foco e responsabilidade:
         </p>
 
-        <h2>*Agências Espaciais</h2>
-        <p>Principais Agências Espaciais:</p>
+        <h2>Agências Espaciais</h2>
+        <img class="agencias" src="img/Agências Espaciais.jpg" alt="Agências Espaciais">
+        <p>*Principais Agências Espaciais:</p>
         <ul>
           <li><strong>NASA(Estados Unidos):</strong> Administração Nacional de Aeronáutica e do Espaço é
             a agência espacial dos EUA, responsável por uma vasta gama de atividades,
@@ -193,20 +242,20 @@
           partida grande agora?</p>
 
         <h2>Foguetes</h2>
-        <p> *Como os Foguetes Espaciais Foram Criados?</p>
+        <p>*Como os Foguetes Espaciais Foram Criados?</p>
 
         <p>A ideia de foguetes não é nova. Ela nasceu na China antiga, por volta do século XIII,
-          com a invenção da pólvora. Os primeiros “foguetes” eram basicamente flechas com
+          com a invenção da pólvora. Os primeiros "foguetes" eram basicamente flechas com
           tubos cheios de pólvora presos a elas, usados em festivais e como armas. Imagine só a
           surpresa dos inimigos quando viam essas flechas voadoras indo na direção deles!</p>
 
         <p> Com o tempo, as pessoas começaram a pensar em como usar essa tecnologia para ir
-          mais longe. É quase como aquela frase de StarTrek: <em>“Audaciosamente indo onde
-            nenhum homem jamais esteve”.</em> Mas foi só no início do século XX que alguns gênios
+          mais longe. É quase como aquela frase de StarTrek: <em>"Audaciosamente indo onde
+            nenhum homem jamais esteve".</em> Mas foi só no início do século XX que alguns gênios
           começaram a transformar a ficção científica em realidade:</p>
         <ul>
           <ul>
-            <li>Kontstantin Tsiolkovsky (Rússia): Ele é considerado o “pai da astronáutica”. No
+            <li>Kontstantin Tsiolkovsky (Rússia): Ele é considerado o "pai da astronáutica". No
               final do século XIX e início do século XX, ele desenvolveu as equações que
               descrevem o movimento de foguetes e propôs o uso de propelentes líquidos,
               algo revolucionário para a época.</li>
@@ -218,7 +267,8 @@
               pequeno, voou por poucos segundos, mas foi um passo gigantesco.</li>
           </ul>
           <ul>
-            <li>Ele também fez contribuições importantes para a teoria de foguetes, desenvolvendo a Teoria do Voo Espacial e o conceito de foguetes de múltiplos estágios, inspirando muitos engenheiros.</li>
+            <li>Ele também fez contribuições importantes para a teoria de foguetes, desenvolvendo a Teoria do Voo
+              Espacial e o conceito de foguetes de múltiplos estágios, inspirando muitos engenheiros.</li>
           </ul>
         </ul>
         <p>A grande virada aconteceu durante a Segunda Guerra Mundial, quando a Alemanha
@@ -227,7 +277,7 @@
           espacial. Muitos cientistas que trabalharam no V-2 foram para os EUA e a União
           Soviética depois da guerra, e eles foram cruciais na corrida espacial.</p>
         <p>O Foguete mais importante já feito:</p>
-
+        <img class="SaturnoV" src="img/Saturno V.jpg" alt="Foguete Saturno V">
         <p>O Saturno V é, sem dúvida, um dos mais icônicos e importantes da história. Ele
           foi projetado e construído pela NASA nos EUA e usado no Programa Apollo para
           levar astronautas à Lua entre 1969 e 1972. Pense em algo do tamanho de um prédio
@@ -236,9 +286,9 @@
           espaciais tripulados. Ele não só levou os primeiros humanos de superar desafios
           incríveis. Sem ele, a humanidade não teria pisado em outro corpo celeste.</p>
 
-        <h2>*A Física por trás dos Foguetes</h2>
+        <h2>A Física por trás dos Foguetes</h2>
 
-        <p>A ideia central do funcionamento de um foguete é a Terceira Lei de Newton: Ação e
+        <p>*A ideia central do funcionamento de um foguete é a Terceira Lei de Newton: Ação e
           Reação.</p>
 
         <p>Imagine que você está parado e dá um salto, empurrando o chão com força para baixo. O que acontece? Você se
@@ -284,7 +334,7 @@
         <ul>
           <ul>
             <li>Energia Química (no Combustível): No início, a maior parte da energia está
-              “armazenada” quimicamente no propelente do foguete (o combustível e o
+              "armazenada" quimicamente no propelente do foguete (o combustível e o
               oxidante). É como a energia da gasolina no tanque de um carro. Essa energia é
               liberada quando o combustível queima.</li>
           </ul>
@@ -375,7 +425,7 @@
         <button class="novamente-btn">Jogar novamente</button>
       </div>
     </section>
-    
+
   </div>
 
   <script type="module" src="JS/perguntas.js"></script>

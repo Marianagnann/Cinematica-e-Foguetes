@@ -9,7 +9,8 @@
   --cor-realce: #9a64ff;
   --cor-secundaria: #2e4057;
 }
-/*#03ff9c*/
+
+/* Tema claro */
 [data-tema="claro"] {
   --cor-fundo: #f4f9ff;
   --cor-caixa: #ffffff;
@@ -28,38 +29,54 @@ body {
   display: flex;
   justify-content: center;
   min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--cor-fundo);
 }
 
-/* Fundo padrão - só cor */
+/* Fundo padrão: só cor, sem imagem */
 body.fundo-padrao {
   background-color: var(--cor-fundo);
-  background-image: none;
 }
 
-/* Fundo para seção textos */
+/* Fundo dos textos: imagem das estrelas como fundo da página */
 body.fundo-textos {
-  background-image: url('caminho/para/imagem-textos.jpg');
+  background-image: url("img/estrelas.jpg");
   background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  color: var(--cor-texto); /* para manter texto visível */
+  /* Posição inicial no topo (estrelas) */
+  background-position: center top;
+  /* Removida a transição automática - agora será controlada via JavaScript */
 }
 
-/* Fundo para seção quiz */
+/* Fundo do quiz: imagem fixa */
 body.fundo-quiz {
-  background-image: url('caminho/para/imagem-quiz.jpg');
-  background-size: cover;
+  background-image: url("img/painel.jpg");
+  background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+
+.textos {
+  position: relative;
+  /* Remove o background da seção, agora vai no body */
+  background: transparent;
   color: var(--cor-texto);
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  z-index: 1;
+  min-height: 100vh;
+  overflow-wrap: break-word;
 }
 
 .caixa-principal {
   max-width: 800px;
-  width: 90%;
-  padding: 20px;
+  width: 100%;
+  padding: 10px;
+  z-index: 1;
+  position: relative;
 }
 
 section {
@@ -68,10 +85,106 @@ section {
   padding: 20px;
   margin: 20px 0;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 2;
 }
 
-h1, h2 {
-  font-family:"Google Sans Code", monospace;
+/* Seção de textos agora com fundo sólido (sem transparência) */
+section.textos {
+  background-color: var(--cor-caixa);
+  /* fundo sólido */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  /* restaura a sombra */
+  padding: 18px;
+  /* restaura o padding */
+  border-radius: 15px;
+  /* restaura o border-radius */
+}
+
+/* Para tema claro */
+[data-tema="claro"] section.textos {
+  background-color: var(--cor-caixa);
+  border-radius: 15px;
+}
+
+.universo {
+  height: 360px;
+  width: 90%;
+  margin-left: 2rem;
+  border-radius: 2px;
+}
+
+/* Estilo aplicado a TODOS os planetas */
+.planeta {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.planeta img {
+  flex-shrink: 0;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.texto-planeta {
+  flex: 1;
+}
+
+.texto-planeta h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.texto-planeta ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.texto-planeta li {
+  position: relative;
+  padding-left: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Bolinhas transparentes com borda preta para todos */
+.texto-planeta li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6rem;
+  width: 5px;
+  height: 5px;
+  border: 1px solid white;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.vista {
+  margin-left: 3rem;
+  height: 380px;
+  width: 620px;
+  border-radius: 2px;
+}
+
+.agencias {
+  margin-left: 3.5rem;
+  border-radius: 2px;
+}
+
+.SaturnoV {
+  margin-left: 2.5rem;
+  height: 400px;
+  width: 650px;
+}
+
+h1,
+h2 {
+  font-family: "Google Sans Code", monospace;
   font-size: 28px;
   color: var(--cor-destaque);
 }
@@ -115,14 +228,17 @@ button:hover {
   display: block;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  margin-top: 10px;
-  border-radius: 8px;
+/* Remove os estilos de conteúdo semi-transparente */
+.conteudo {
+  position: relative;
+  z-index: 3;
+  /* Remove o fundo semi-transparente */
+  padding: 20px;
+  border-radius: 10px;
+  margin: 10px 0;
 }
 
-@media (max-width: 60px) {
+@media (max-width: 600px) {
   body {
     padding: 10px;
   }
@@ -134,5 +250,12 @@ img {
   #toggle-tema {
     font-size: 14px;
     padding: 8px;
+  }
+
+  .textos {
+    min-height: 80vh;
+    /* altura menor em mobile */
+    background-attachment: scroll;
+    /* melhor performance em mobile */
   }
 }
