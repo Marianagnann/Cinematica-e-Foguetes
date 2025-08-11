@@ -18,9 +18,6 @@ O site aborda:
 - **JavaScript**
 - **GitHub Pages** para publicação
 
-## 📷 Prévia do projeto
-![Prévia do site](img/estrelas.jpg)
-
 ---
 
 ✏️ Desenvolvido por [Mariana Gnann](https://github.com/marianagnann) e [Ana Beatriz](https://github.com/whiskyandvoodka)   
