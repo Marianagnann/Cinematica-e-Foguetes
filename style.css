@@ -20,6 +20,19 @@
   --cor-secundaria: #dbe9f4;
 }
 
+li {
+  margin-bottom: 0.85rem;
+}
+
+.sublinhado {
+  text-decoration: underline;
+  text-decoration-color: #023bf8;
+}
+
+[data-tema="claro"] .sublinhado {
+  text-decoration-color: #02f82b;
+}
+
 body {
   color: var(--cor-texto);
   font-family: "Tinos", serif;
@@ -33,23 +46,15 @@ body {
   background-color: var(--cor-fundo);
 }
 
-/* Fundo padrão: só cor, sem imagem */
-body.fundo-padrao {
-  background-color: var(--cor-fundo);
-}
-
-/* Fundo dos textos: imagem das estrelas como fundo da página */
+/* Fundos do body */
 body.fundo-textos {
   background-image: url("img/estrelas.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  /* Posição inicial no topo (estrelas) */
   background-position: center top;
-  /* Removida a transição automática - agora será controlada via JavaScript */
 }
 
-/* Fundo do quiz: imagem fixa */
 body.fundo-quiz {
   background-image: url("img/painel.jpg");
   background-size: 100%;
@@ -60,8 +65,6 @@ body.fundo-quiz {
 
 .textos {
   position: relative;
-  /* Remove o background da seção, agora vai no body */
-  background: transparent;
   color: var(--cor-texto);
   padding: 0;
   border-radius: 0;
@@ -74,7 +77,7 @@ body.fundo-quiz {
 .caixa-principal {
   max-width: 800px;
   width: 100%;
-  padding: 10px;
+  padding: 20px 10px;
   z-index: 1;
   position: relative;
 }
@@ -89,32 +92,77 @@ section {
   z-index: 2;
 }
 
-/* Seção de textos agora com fundo sólido (sem transparência) */
+/* Seção de textos - mantém o fundo da caixa para leitura */
 section.textos {
   background-color: var(--cor-caixa);
-  /* fundo sólido */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  /* restaura a sombra */
   padding: 18px;
-  /* restaura o padding */
   border-radius: 15px;
-  /* restaura o border-radius */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Para tema claro */
-[data-tema="claro"] section.textos {
-  background-color: var(--cor-caixa);
-  border-radius: 15px;
-}
+/* IMAGENS - Escalam fluidamente mantendo proporções e valores originais */
 
+/* Universo - valores originais: height: 360px; width: 90%; margin-left: 2rem; */
 .universo {
-  height: 360px;
-  width: 90%;
-  margin-left: 2rem;
+  /* Dimensões baseadas nos valores originais com escala fluida */
+  height: clamp(216px, calc(216px + 18vw), 360px); /* 60% de 360px até 360px */
+  width: clamp(54%, calc(54% + 36vw), 90%); /* 60% de 90% até 90% */
+  /* Centralizacao adequada mantendo posicionamento original */
+  margin: 0 auto;
+  margin-left: clamp(1.2rem, calc(1.2rem + 1vw), 2rem); /* 60% de 2rem até 2rem */
   border-radius: 2px;
+  display: block;
 }
 
-/* Estilo aplicado a TODOS os planetas */
+/* Vista - valores originais: margin-left: 3rem; height: 380px; width: 620px; */
+.vista {
+  /* Dimensões baseadas nos valores originais */
+  height: clamp(228px, calc(228px + 19vw), 380px); /* 60% de 380px até 380px */
+  width: clamp(372px, calc(372px + 31vw), 620px); /* 60% de 620px até 620px */
+  /* Posicionamento original mantido proporcionalmente */
+  margin: 0 auto;
+  margin-left: clamp(1.8rem, calc(1.8rem + 1.5vw), 3rem); /* 60% de 3rem até 3rem */
+  border-radius: 2px;
+  display: block;
+}
+
+/* Agências - valores originais: margin-left: 3.5rem; width estimado: 700px */
+.agencias {
+  /* Largura estimada baseada no padrão das outras imagens */
+  width: clamp(420px, calc(420px + 35vw), 700px); /* 60% de 700px até 700px */
+  height: auto; /* Mantém altura automática */
+  /* Posicionamento original mantido */
+  margin: 0 auto;
+  margin-left: clamp(2.1rem, calc(2.1rem + 1.75vw), 3.5rem); /* 60% de 3.5rem até 3.5rem */
+  border-radius: 2px;
+  display: block;
+}
+
+/* Saturno V - valores originais: margin-left: 2.5rem; height: 400px; width: 650px; */
+.SaturnoV {
+  /* Dimensões baseadas nos valores originais */
+  height: clamp(240px, calc(240px + 20vw), 400px); /* 60% de 400px até 400px */
+  width: clamp(390px, calc(390px + 32.5vw), 650px); /* 60% de 650px até 650px */
+  /* Posicionamento original mantido */
+  margin: 0 auto;
+  margin-left: clamp(1.5rem, calc(1.5rem + 1.25vw), 2.5rem); /* 60% de 2.5rem até 2.5rem */
+  border-radius: 2px;
+  display: block;
+}
+
+/* Empuxo - valores originais: margin-left: 2rem; height: 92%; width: 92%; */
+.empuxo {
+  /* Mantém proporções percentuais originais */
+  height: clamp(55%, calc(55% + 37vw), 92%); /* 60% de 92% até 92% */
+  width: clamp(55%, calc(55% + 37vw), 92%); /* 60% de 92% até 92% */
+  /* Posicionamento original mantido */
+  margin: 0 auto;
+  margin-left: clamp(1.2rem, calc(1.2rem + 1vw), 2rem); /* 60% de 2rem até 2rem */
+  border-radius: 2px;
+  display: block;
+}
+
+/* Planetas */
 .planeta {
   display: flex;
   align-items: center;
@@ -125,8 +173,8 @@ section.textos {
 
 .planeta img {
   flex-shrink: 0;
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
   object-fit: cover;
 }
 
@@ -151,7 +199,6 @@ section.textos {
   margin-bottom: 0.5rem;
 }
 
-/* Bolinhas transparentes com borda preta para todos */
 .texto-planeta li::before {
   content: "";
   position: absolute;
@@ -159,36 +206,19 @@ section.textos {
   top: 0.6rem;
   width: 5px;
   height: 5px;
-  border: 1px solid white;
+  border: 1px solid var(--cor-texto);
   border-radius: 50%;
   background: transparent;
 }
 
-.vista {
-  margin-left: 3rem;
-  height: 380px;
-  width: 620px;
-  border-radius: 2px;
-}
-
-.agencias {
-  margin-left: 3.5rem;
-  border-radius: 2px;
-}
-
-.SaturnoV {
-  margin-left: 2.5rem;
-  height: 400px;
-  width: 650px;
-}
-
-h1,
-h2 {
+/* Títulos */
+h1, h2 {
   font-family: "Google Sans Code", monospace;
   font-size: 28px;
   color: var(--cor-destaque);
 }
 
+/* Botões */
 button {
   background-color: var(--cor-secundaria);
   color: var(--cor-texto);
@@ -206,13 +236,31 @@ button:hover {
   color: var(--cor-caixa);
 }
 
-#toggle-tema {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  z-index: 100;
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: var(--cor-secundaria);
 }
 
+/* Botão alterar tema */
+#toggle-tema {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 1000;
+  width: 120px;
+  height: 40px;
+  font-size: 14px;
+  padding: 8px 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+#toggle-tema:hover {
+  opacity: 0.9;
+}
+
+/* Quiz */
 .caixa-alternativas {
   display: flex;
   flex-direction: column;
@@ -228,34 +276,156 @@ button:hover {
   display: block;
 }
 
-/* Remove os estilos de conteúdo semi-transparente */
 .conteudo {
   position: relative;
   z-index: 3;
-  /* Remove o fundo semi-transparente */
   padding: 20px;
   border-radius: 10px;
   margin: 10px 0;
 }
 
-@media (max-width: 600px) {
-  body {
-    padding: 10px;
-  }
+/* Feedback visual */
+.feedback-visual {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  opacity: 0;
+  scale: 0.5;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  pointer-events: none;
+}
 
-  button {
-    width: 100%;
-  }
+.feedback-visual.mostrar {
+  opacity: 1;
+  scale: 1;
+}
 
+.icone-feedback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  animation: pulso 1.5s ease-in-out;
+}
+
+.icone-feedback.correto {
+  background: rgba(0, 255, 0, 0.1);
+  border-color: rgba(0, 255, 0, 0.3);
+  box-shadow: 0 0 30px rgba(0, 255, 0, 0.3);
+}
+
+.icone-feedback.incorreto {
+  background: rgba(255, 0, 0, 0.1);
+  border-color: rgba(255, 0, 0, 0.3);
+  box-shadow: 0 0 30px rgba(255, 0, 0, 0.3);
+}
+
+/* Animações */
+@keyframes pulso {
+  0% { scale: 0.8; box-shadow: 0 0 0 0 currentColor; }
+  50% { scale: 1.1; }
+  70% { box-shadow: 0 0 0 10px transparent; }
+  100% { scale: 1; box-shadow: 0 0 0 0 transparent; }
+}
+
+@keyframes desenhar {
+  from { opacity: 0; scale: 0.5; }
+  to { opacity: 1; scale: 1; }
+}
+
+@keyframes desenharLinha {
+  to { stroke-dashoffset: 0; }
+}
+
+.feedback-visual svg {
+  animation: desenhar 0.8s ease-in-out forwards;
+}
+
+.feedback-visual.mostrar svg path,
+.feedback-visual.mostrar svg circle {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: desenharLinha 0.8s ease-in-out 0.2s forwards;
+}
+
+/* MEDIA QUERIES - Apenas para elementos que NÃO são imagens */
+
+/* Tablets pequenos e mobile (até 768px) */
+@media (max-width: 768px) {
+  body { font-size: 20px; }
+  h1, h2 { font-size: 24px; }
+  
+  .caixa-principal { padding: 15px 8px 80px; }
+  section { padding: 15px; margin: 15px 0; }
+  
+  /* Botão tema */
   #toggle-tema {
-    font-size: 14px;
-    padding: 8px;
+    top: 10px;
+    right: 10px;
+    width: 100px;
+    height: 36px;
+    font-size: 12px;
+    padding: 6px 10px;
   }
-
+  
+  .quiz #toggle-tema {
+    top: auto;
+    bottom: 20px;
+    opacity: 0.7;
+  }
+  
+  /* Planetas */
+  .planeta {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .planeta img {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+  }
+  
+  /* Textos */
   .textos {
     min-height: 80vh;
-    /* altura menor em mobile */
     background-attachment: scroll;
-    /* melhor performance em mobile */
+  }
+  
+  /* Botões gerais */
+  button { width: 100%; }
+}
+
+/* Mobile pequeno (até 480px) */
+@media (max-width: 480px) {
+  .caixa-principal { padding: 12px 5px 80px; }
+  section { padding: 12px; margin: 10px 0; }
+  
+  #toggle-tema {
+    width: 90px;
+    height: 32px;
+    font-size: 11px;
+    padding: 5px 8px;
+    top: 8px;
+    right: 8px;
+  }
+  
+  .quiz #toggle-tema {
+    bottom: 15px;
+    opacity: 0.6;
+    transform: scale(0.9);
+  }
+  
+  .planeta img {
+    width: 120px;
+    height: 120px;
   }
 }

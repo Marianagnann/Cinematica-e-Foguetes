@@ -42,16 +42,17 @@ iniciarQuizBtn.addEventListener('click', () => {
 });
 
 novamenteBtn.addEventListener('click', () => {
-  body.classList.remove('fundo-quiz');
-  body.classList.add('fundo-padrao');
+  body.classList.remove('fundo-padrao');
+  body.classList.add('fundo-quiz');
 
-  secaoQuiz.style.display = "none";
-  secaoAviso.style.display = "block";
-
-  // Reset das variáveis do quiz
+  secaoAviso.style.display = "none";
+  secaoQuiz.style.display = "block";
+   
   indicePergunta = 0;
   acertos = 0;
   caixaResultado.classList.remove("mostrar");
+  
+  mostrarPergunta()
 });
 
 function iniciarQuiz() {
@@ -69,17 +70,85 @@ function mostrarPergunta() {
   pergunta.alternativas.forEach((alt) => {
     const btn = document.createElement("button");
     btn.textContent = alt.texto;
-    btn.onclick = () => {
-      if (alt.correta) acertos++;
-      indicePergunta++;
-      if (indicePergunta < perguntas.length) {
-        mostrarPergunta();
-      } else {
-        mostrarResultado();
-      }
-    };
+    btn.onclick = () => responderPergunta(alt.correta);
     caixaAlternativas.appendChild(btn);
   });
+}
+
+function responderPergunta(correta) {
+  // Desabilita todos os botões para evitar múltiplos cliques
+  const botoes = caixaAlternativas.querySelectorAll('button');
+  botoes.forEach(btn => btn.disabled = true);
+
+  // Mostra o feedback visual
+  mostrarFeedback(correta);
+
+  // Atualiza o contador de acertos
+  if (correta) acertos++;
+
+  // Aguarda um tempo antes de continuar
+  setTimeout(() => {
+    indicePergunta++;
+    if (indicePergunta < perguntas.length) {
+      mostrarPergunta();
+    } else {
+      mostrarResultado();
+    }
+  }, 2000); // 2 segundos para ver o feedback
+}
+
+function mostrarFeedback(correta) {
+  // Remove feedback anterior se existir
+  const feedbackExistente = document.querySelector('.feedback-visual');
+  if (feedbackExistente) {
+    feedbackExistente.remove();
+  }
+
+  // Cria o elemento de feedback
+  const feedback = document.createElement('div');
+  feedback.className = 'feedback-visual';
+  
+  if (correta) {
+    feedback.innerHTML = `
+      <div class="icone-feedback correto">
+        <svg width="80" height="80" viewBox="0 0 100 100" fill="none">
+          <circle cx="50" cy="50" r="45" stroke="#00ff00" stroke-width="6"/>
+          <path d="M30 50 L45 65 L70 35" stroke="#00ff00" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    `;
+  } else {
+    feedback.innerHTML = `
+      <div class="icone-feedback incorreto">
+        <svg width="80" height="80" viewBox="0 0 100 100" fill="none">
+          <circle cx="50" cy="50" r="45" stroke="#ff0000" stroke-width="6"/>
+          <path d="M35 35 L65 65" stroke="#ff0000" stroke-width="6" stroke-linecap="round"/>
+          <path d="M65 35 L35 65" stroke="#ff0000" stroke-width="6" stroke-linecap="round"/>
+        </svg>
+      </div>
+    `;
+  }
+
+  // Adiciona ao body
+  document.body.appendChild(feedback);
+
+  // Força um reflow para garantir que a animação funcione
+  feedback.offsetHeight;
+
+  // Adiciona a classe de animação
+  feedback.classList.add('mostrar');
+
+  // Remove o feedback após a animação
+  setTimeout(() => {
+    if (feedback.parentNode) {
+      feedback.classList.remove('mostrar');
+      setTimeout(() => {
+        if (feedback.parentNode) {
+          feedback.remove();
+        }
+      }, 300);
+    }
+  }, 1700);
 }
 
 function mostrarResultado() {
