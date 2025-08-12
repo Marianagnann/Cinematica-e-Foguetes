@@ -46,13 +46,22 @@ body {
   background-color: var(--cor-fundo);
 }
 
+/* Garante que todas as imagens sejam proporcionais e não quebrem o layout */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* Fundos do body */
 body.fundo-textos {
   background-image: url("img/estrelas.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: scroll; /* fallback para mobile */
   background-position: center top;
+  /* Truque para simular parallax no mobile */
+  transform: translateZ(0);
 }
 
 body.fundo-quiz {
@@ -60,7 +69,20 @@ body.fundo-quiz {
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: scroll; /* fallback para mobile */
+  /* Truque para simular parallax no mobile */
+  transform: translateZ(0);
+}
+
+/* Parallax fixo apenas para desktop */
+@media (min-width: 769px) {
+  body.fundo-textos {
+    background-attachment: fixed;
+  }
+  
+  body.fundo-quiz {
+    background-attachment: fixed;
+  }
 }
 
 .textos {
@@ -80,6 +102,7 @@ body.fundo-quiz {
   padding: 20px 10px;
   z-index: 1;
   position: relative;
+  margin: 0 auto;
 }
 
 section {
@@ -98,6 +121,13 @@ section.textos {
   padding: 18px;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Centraliza imagens específicas */
+.imagem-reacao {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
 }
 
 /* IMAGENS - Escalam fluidamente mantendo proporções e valores originais */
@@ -129,11 +159,11 @@ section.textos {
 /* Agências - valores originais: margin-left: 3.5rem; width estimado: 700px */
 .agencias {
   /* Largura estimada baseada no padrão das outras imagens */
-  width: clamp(420px, calc(420px + 35vw), 700px); /* 60% de 700px até 700px */
+  width: clamp(420px, calc(420px + 35vw), 600px); 
   height: auto; /* Mantém altura automática */
   /* Posicionamento original mantido */
   margin: 0 auto;
-  margin-left: clamp(2.1rem, calc(2.1rem + 1.75vw), 3.5rem); /* 60% de 3.5rem até 3.5rem */
+  margin-left: clamp(2rem, calc(2rem + 1.75vw), 3.6rem);
   border-radius: 2px;
   display: block;
 }
@@ -209,6 +239,22 @@ section.textos {
   border: 1px solid var(--cor-texto);
   border-radius: 50%;
   background: transparent;
+}
+
+/* Alinhamento proporcional das bolinhas e textos dos planetas */
+.topico-planeta {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Espaço fixo proporcional entre bolinha e texto */
+  margin-bottom: 10px;
+}
+
+.topico-planeta .bolinha {
+  width: 20px;
+  height: 20px;
+  background-color: #ff9800;
+  border-radius: 50%;
+  flex-shrink: 0;
 }
 
 /* Títulos */
@@ -362,7 +408,9 @@ button:disabled {
   body { font-size: 20px; }
   h1, h2 { font-size: 24px; }
   
-  .caixa-principal { padding: 15px 8px 80px; }
+  .caixa-principal { 
+    padding: 15px 8px 80px; 
+  }
   section { padding: 15px; margin: 15px 0; }
   
   /* Botão tema */
@@ -394,14 +442,23 @@ button:disabled {
     margin: 0 auto;
   }
   
+  /* Alinhamento dos tópicos dos planetas no mobile */
+  .topico-planeta {
+    gap: 10px; /* Mantém distância proporcional no mobile */
+  }
+  
   /* Textos */
   .textos {
     min-height: 80vh;
-    background-attachment: scroll;
   }
   
   /* Botões gerais */
   button { width: 100%; }
+  
+  /* Imagens de reação */
+  .imagem-reacao img {
+    max-width: 90%;
+  }
 }
 
 /* Mobile pequeno (até 480px) */
