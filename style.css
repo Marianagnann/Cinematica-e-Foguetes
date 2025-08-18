@@ -42,26 +42,24 @@ body {
   display: flex;
   justify-content: center;
   min-height: 100vh;
-  overflow-x: hidden;
+  /*overflow-x: clip; caso precise esconder o scroll*/
   background-color: var(--cor-fundo);
+  text-align: justify;
+  text-justify: inter-word; /* Melhora o espaçamento entre palavras */
 }
 
-/* Garante que todas as imagens sejam proporcionais e não quebrem o layout */
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* Fundos do body */
 body.fundo-textos {
   background-image: url("img/estrelas.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: scroll; /* fallback para mobile */
+  background-attachment: scroll;
   background-position: center top;
-  /* Truque para simular parallax no mobile */
-  transform: translateZ(0);
 }
 
 body.fundo-quiz {
@@ -69,9 +67,7 @@ body.fundo-quiz {
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: scroll; /* fallback para mobile */
-  /* Truque para simular parallax no mobile */
-  transform: translateZ(0);
+  background-attachment: scroll;
 }
 
 /* Parallax fixo apenas para desktop */
@@ -79,7 +75,7 @@ body.fundo-quiz {
   body.fundo-textos {
     background-attachment: fixed;
   }
-  
+
   body.fundo-quiz {
     background-attachment: fixed;
   }
@@ -93,7 +89,6 @@ body.fundo-quiz {
   box-shadow: none;
   z-index: 1;
   min-height: 100vh;
-  overflow-wrap: break-word;
 }
 
 .caixa-principal {
@@ -105,6 +100,7 @@ body.fundo-quiz {
   margin: 0 auto;
 }
 
+
 section {
   background-color: var(--cor-caixa);
   border-radius: 15px;
@@ -115,84 +111,67 @@ section {
   z-index: 2;
 }
 
-/* Seção de textos - mantém o fundo da caixa para leitura */
-section.textos {
-  background-color: var(--cor-caixa);
-  padding: 18px;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-/* Centraliza imagens específicas */
 .imagem-reacao {
   display: flex;
   justify-content: center;
   margin: 20px 0;
 }
 
-/* IMAGENS - Escalam fluidamente mantendo proporções e valores originais */
-
-/* Universo - valores originais: height: 360px; width: 90%; margin-left: 2rem; */
 .universo {
-  /* Dimensões baseadas nos valores originais com escala fluida */
-  height: clamp(216px, calc(216px + 18vw), 360px); /* 60% de 360px até 360px */
-  width: clamp(54%, calc(54% + 36vw), 90%); /* 60% de 90% até 90% */
-  /* Centralizacao adequada mantendo posicionamento original */
-  margin: 0 auto;
-  margin-left: clamp(1.2rem, calc(1.2rem + 1vw), 2rem); /* 60% de 2rem até 2rem */
+  height: clamp(20vh, calc(20vh + 20vw), 60vh);
+  width: clamp(54%, calc(54% + 30vw), 90%);
   border-radius: 2px;
-  display: block;
 }
 
-/* Vista - valores originais: margin-left: 3rem; height: 380px; width: 620px; */
 .vista {
-  /* Dimensões baseadas nos valores originais */
-  height: clamp(228px, calc(228px + 19vw), 380px); /* 60% de 380px até 380px */
-  width: clamp(372px, calc(372px + 31vw), 620px); /* 60% de 620px até 620px */
-  /* Posicionamento original mantido proporcionalmente */
-  margin: 0 auto;
-  margin-left: clamp(1.8rem, calc(1.8rem + 1.5vw), 3rem); /* 60% de 3rem até 3rem */
+  height: clamp(25vh, calc(25vh + 20vw), 65vh);
+  width: clamp(70%, calc(70% + 20vw), 90%);
   border-radius: 2px;
-  display: block;
 }
 
-/* Agências - valores originais: margin-left: 3.5rem; width estimado: 700px */
 .agencias {
-  /* Largura estimada baseada no padrão das outras imagens */
-  width: clamp(420px, calc(420px + 35vw), 600px); 
-  height: auto; /* Mantém altura automática */
-  /* Posicionamento original mantido */
-  margin: 0 auto;
-  margin-left: clamp(2rem, calc(2rem + 1.75vw), 3.6rem);
+  width: clamp(470px, calc(470px + 35vw), 630px);
+  height: auto;
   border-radius: 2px;
-  display: block;
 }
 
-/* Saturno V - valores originais: margin-left: 2.5rem; height: 400px; width: 650px; */
 .SaturnoV {
-  /* Dimensões baseadas nos valores originais */
-  height: clamp(240px, calc(240px + 20vw), 400px); /* 60% de 400px até 400px */
-  width: clamp(390px, calc(390px + 32.5vw), 650px); /* 60% de 650px até 650px */
-  /* Posicionamento original mantido */
-  margin: 0 auto;
-  margin-left: clamp(1.5rem, calc(1.5rem + 1.25vw), 2.5rem); /* 60% de 2.5rem até 2.5rem */
+  height: clamp(100px, calc(100px + 20vw), 400px);
+  width: clamp(390px, calc(390px + 32.5vw), 650px);
   border-radius: 2px;
-  display: block;
 }
 
-/* Empuxo - valores originais: margin-left: 2rem; height: 92%; width: 92%; */
 .empuxo {
-  /* Mantém proporções percentuais originais */
-  height: clamp(55%, calc(55% + 37vw), 92%); /* 60% de 92% até 92% */
-  width: clamp(55%, calc(55% + 37vw), 92%); /* 60% de 92% até 92% */
-  /* Posicionamento original mantido */
-  margin: 0 auto;
-  margin-left: clamp(1.2rem, calc(1.2rem + 1vw), 2rem); /* 60% de 2rem até 2rem */
+  height: clamp(50%, calc(50% + 33vw), 88%);
+  width: clamp(50%, calc(50% + 33vw), 88%);
   border-radius: 2px;
-  display: block;
 }
 
-/* Planetas */
+/* .universo {
+  height: clamp(30%, calc(30% + 20vw), 75%);
+  width: clamp(54%, calc(54% + 30vw), 90%);
+}
+
+.vista {
+  height: clamp(35%, calc(35% + 20vw), 80%);
+  width: clamp(70%, calc(70% + 20vw), 90%);
+}
+
+.agencias {
+  height: clamp(25%, calc(25% + 15vw), 45%);
+  width: clamp(60%, calc(60% + 35vw), 85%);
+}
+
+.SaturnoV {
+  height: clamp(15%, calc(15% + 20vw), 50%);
+  width: clamp(50%, calc(50% + 32.5vw), 85%);
+}
+
+.empuxo {
+  height: clamp(55%, calc(55% + 37vw), 92%); 
+  width: clamp(55%, calc(55% + 37vw), 92%);
+} */
+
 .planeta {
   display: flex;
   align-items: center;
@@ -241,27 +220,13 @@ section.textos {
   background: transparent;
 }
 
-/* Alinhamento proporcional das bolinhas e textos dos planetas */
-.topico-planeta {
-  display: flex;
-  align-items: center;
-  gap: 15px; /* Espaço fixo proporcional entre bolinha e texto */
-  margin-bottom: 10px;
-}
-
-.topico-planeta .bolinha {
-  width: 20px;
-  height: 20px;
-  background-color: #ff9800;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
 /* Títulos */
-h1, h2 {
+h1,
+h2 {
   font-family: "Google Sans Code", monospace;
   font-size: 28px;
   color: var(--cor-destaque);
+  text-align: left;
 }
 
 /* Botões */
@@ -322,6 +287,18 @@ button:disabled {
   display: block;
 }
 
+.texto-resultado {
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.texto-resultado strong {
+  color: var(--cor-destaque);
+  font-size: 1.2rem;
+}
+
 .conteudo {
   position: relative;
   z-index: 3;
@@ -375,19 +352,41 @@ button:disabled {
 
 /* Animações */
 @keyframes pulso {
-  0% { scale: 0.8; box-shadow: 0 0 0 0 currentColor; }
-  50% { scale: 1.1; }
-  70% { box-shadow: 0 0 0 10px transparent; }
-  100% { scale: 1; box-shadow: 0 0 0 0 transparent; }
+  0% {
+    scale: 0.8;
+    box-shadow: 0 0 0 0 currentColor;
+  }
+
+  50% {
+    scale: 1.1;
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px transparent;
+  }
+
+  100% {
+    scale: 1;
+    box-shadow: 0 0 0 0 transparent;
+  }
 }
 
 @keyframes desenhar {
-  from { opacity: 0; scale: 0.5; }
-  to { opacity: 1; scale: 1; }
+  from {
+    opacity: 0;
+    scale: 0.5;
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
+  }
 }
 
 @keyframes desenharLinha {
-  to { stroke-dashoffset: 0; }
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 .feedback-visual svg {
@@ -401,19 +400,127 @@ button:disabled {
   animation: desenharLinha 0.8s ease-in-out 0.2s forwards;
 }
 
+.notificacao-base {
+  background: linear-gradient(135deg, var(--cor-destaque), var(--cor-realce));
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(118, 45, 255, 0.3);
+  animation: piscar 2s infinite;
+}
+
+.notificacao-base:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(118, 45, 255, 0.4);
+}
+
+.mensagem-comando {
+  background: rgba(var(--cor-caixa), 0.9);
+  border: 2px solid var(--cor-destaque);
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  line-height: 1.6;
+  animation: aparecer 0.5s ease-out;
+}
+
+@keyframes piscar {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Adicione depois da linha 299 (.mensagem-comando) */
+.mensagem-final {
+  background: linear-gradient(135deg, var(--cor-destaque), var(--cor-realce));
+  color: white;
+  padding: 40px 30px;
+  border-radius: 20px;
+  text-align: center;
+  line-height: 1.8;
+  font-size: 1.3em;
+  box-shadow: 0 8px 25px rgba(118, 45, 255, 0.4);
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: aparecer 0.8s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.mensagem-final:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(118, 45, 255, 0.5);
+}
+
+.mensagem-final::before {
+  content: "🚀";
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 2em;
+  opacity: 0.7;
+}
+
+.mensagem-final::after {
+  content: "Clique para continuar";
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  font-size: 0.7em;
+  opacity: 0.8;
+  font-style: italic;
+}
+
+/* Estilo para quando mostra o resultado detalhado */
+.resultado-detalhado {
+  background: rgba(var(--cor-caixa), 0.95);
+  border: 3px solid var(--cor-destaque);
+  padding: 35px;
+  border-radius: 20px;
+  text-align: center;
+  line-height: 1.8;
+  animation: aparecer 0.6s ease-out;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  font-size: 1.2em;
+}
+
 /* MEDIA QUERIES - Apenas para elementos que NÃO são imagens */
 
 /* Tablets pequenos e mobile (até 768px) */
 @media (max-width: 768px) {
-  body { font-size: 20px; }
-  h1, h2 { font-size: 24px; }
-  
-  .caixa-principal { 
-    padding: 15px 8px 80px; 
+  body {
+    font-size: 20px;
   }
-  section { padding: 15px; margin: 15px 0; }
-  
-  /* Botão tema */
+
+  h1,
+  h2 {
+    font-size: 24px;
+  }
+
+  .caixa-principal {
+    padding: 15px 8px 80px;
+  }
+
+  section {
+    padding: 15px;
+    margin: 15px 0;
+  }
+ 
   #toggle-tema {
     top: 10px;
     right: 10px;
@@ -422,39 +529,50 @@ button:disabled {
     font-size: 12px;
     padding: 6px 10px;
   }
-  
+
   .quiz #toggle-tema {
     top: auto;
     bottom: 20px;
     opacity: 0.7;
   }
-  
+
   /* Planetas */
   .planeta {
     flex-direction: column;
     text-align: center;
     gap: 1rem;
   }
-  
+
   .planeta img {
     width: 150px;
     height: 150px;
     margin: 0 auto;
   }
-  
+
   /* Alinhamento dos tópicos dos planetas no mobile */
   .topico-planeta {
-    gap: 10px; /* Mantém distância proporcional no mobile */
+    gap: 10px;
+    /* Mantém distância proporcional no mobile */
   }
-  
+
+  .texto-planeta li {
+    padding-left: 0.8rem; /* Reduz o espaço entre bolinha e texto */
+  }
+
+.texto-planeta ul {
+    text-align: left; /* Força o alinhamento à esquerda para as listas */
+  }
+
   /* Textos */
   .textos {
     min-height: 80vh;
   }
-  
+
   /* Botões gerais */
-  button { width: 100%; }
-  
+  button {
+    width: 100%;
+  }
+
   /* Imagens de reação */
   .imagem-reacao img {
     max-width: 90%;
@@ -463,9 +581,15 @@ button:disabled {
 
 /* Mobile pequeno (até 480px) */
 @media (max-width: 480px) {
-  .caixa-principal { padding: 12px 5px 80px; }
-  section { padding: 12px; margin: 10px 0; }
-  
+  .caixa-principal {
+    padding: 12px 5px 80px;
+  }
+
+  section {
+    padding: 12px;
+    margin: 10px 0;
+  }
+
   #toggle-tema {
     width: 90px;
     height: 32px;
@@ -474,15 +598,71 @@ button:disabled {
     top: 8px;
     right: 8px;
   }
-  
+
   .quiz #toggle-tema {
     bottom: 15px;
     opacity: 0.6;
     transform: scale(0.9);
   }
-  
+
   .planeta img {
     width: 120px;
     height: 120px;
   }
+
+  .texto-planeta li {
+    padding-left: 0.6rem; 
+    margin-bottom: 0.3rem; 
+  }
+
+  .texto-planeta ul {
+    text-align: left; /* Mantém a lista alinhada à esquerda */
+    max-width: fit-content; /* Evita que a lista se estenda demais */
+    margin: 0 auto; /* Centraliza o bloco da lista */
+  }
+}
+
+/* Centralização do quiz na tela */
+.quiz-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.quiz {
+    text-align: center;
+    padding: 20px !important;
+    max-width: 800px;
+    width: auto;
+
+    max-width: min(800px, 90vw);  /* Nunca ultrapassa 90% da largura da tela */
+    max-height: 90vh;             /* Nunca ultrapassa 90% da altura da tela */
+    overflow-y: auto;             /* Adiciona scroll se necessário */
+    box-sizing: border-box;       /* Inclui padding no cálculo do tamanho */
+}
+
+/* Para telas pequenas (celulares): */
+@media (max-width: 768px) {
+    .quiz-container {
+        padding: 10px;  /* Menos padding em telas pequenas */
+    }
+    
+    .quiz {
+        max-width: 95vw;  /* Usa mais espaço em celulares */
+        padding: 15px !important;
+    }
+}
+
+/* Para telas muito pequenas: */
+@media (max-width: 480px) {
+    .quiz {
+        max-width: 98vw;
+        padding: 10px !important;
+    }
 }

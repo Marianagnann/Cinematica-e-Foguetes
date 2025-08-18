@@ -51,6 +51,7 @@ novamenteBtn.addEventListener('click', () => {
   indicePergunta = 0;
   acertos = 0;
   caixaResultado.classList.remove("mostrar");
+  novamenteBtn.style.display = "none";
   
   mostrarPergunta()
 });
@@ -59,6 +60,7 @@ function iniciarQuiz() {
   indicePergunta = 0;
   acertos = 0;
   caixaResultado.classList.remove("mostrar");
+  novamenteBtn.style.display = "none"; 
   mostrarPergunta();
 }
 
@@ -153,9 +155,60 @@ function mostrarFeedback(correta) {
 
 function mostrarResultado() {
   caixaResultado.classList.add("mostrar");
-  textoResultado.textContent = `Você acertou ${acertos} de ${perguntas.length} perguntas.`;
+  
+  // Mostra uma mensagem final mais impactante
+  textoResultado.innerHTML = `
+    <div class="notificacao-base">
+      📡 MISSÃO CONCLUÍDA, ASTRONAUTA! 📡
+      <br><br>
+      <strong>Relatório da base de comando aguardando...</strong>
+      <br><br>
+      Clique aqui para receber sua avaliação oficial
+    </div>
+  `;
+  
+  // Adiciona event listener para mostrar o resultado quando clicar
+  textoResultado.onclick = () => mostrarMensagemFinal();
+  
   caixaPerguntas.textContent = "";
   caixaAlternativas.innerHTML = "";
+}
+
+function mostrarMensagemFinal() {
+  // Determina a frase baseada no número de acertos
+  let fraseResultado = "";
+  let emoji = "";
+  
+  if (acertos >= 7) {
+    fraseResultado = "Parabéns Astronauta! Você alcançou a velocidade da luz em conhecimento!";
+    emoji = "🌟";
+  } else if (acertos >= 4) {
+    fraseResultado = "Boa Explorador Espacial! Você tem um bom domínio sobre o assunto, mas ainda pode melhorar!";
+    emoji = "🚀";
+  } else {
+    fraseResultado = "Cadete, missão comprometida! Que tal uma nova tentativa?";
+    emoji = "⚠️";
+  }
+  
+  textoResultado.innerHTML = `
+    <div class="resultado-detalhado">
+      ${emoji}<br>
+      <strong>RESULTADO DA MISSÃO</strong>
+      <br><br>
+      ${fraseResultado}
+      <br><br>
+      <strong>Você acertou ${acertos} de ${perguntas.length} perguntas.</strong>
+    </div>
+  `;
+  
+  // Remove o event listener
+  textoResultado.onclick = null;
+  
+  // Mostra o botão "jogar novamente" após um pequeno delay
+  setTimeout(() => {
+    novamenteBtn.style.display = "block";
+    novamenteBtn.style.animation = "aparecer 0.5s ease-out";
+  }, 500);
 }
 
 // Nova função para parallax sincronizado com o scroll

@@ -8,7 +8,7 @@
   <title>Explorando Foguetes e Cinemática</title>
 </head>
 
-<body class="fundo-textos">
+<body>
 
   <button id="toggle-tema">Alternar Tema</button>
 
@@ -34,7 +34,7 @@
     </section>
 
     <!-- Textos informativos -->
-    <section class="textos" style="display:none">
+    <section class="fundo-textos textos" style="display:none">
       <!-- Wrapper para o conteúdo do texto -->
       <div class="conteudo">
 
@@ -263,7 +263,7 @@
           começaram a transformar a ficção científica em realidade:</p>
         <ul>
           <ul>
-            <li><span class="sublinhado">Kontstantin Tsiolkovsky (Rússia):</span> Ele é considerado o "pai da astronáutica". No
+            <li><span class="sublinhado">Konstantin Tsiolkovsky (Rússia):</span> Ele é considerado o "pai da astronáutica". No
               final do século XIX e início do século XX, ele desenvolveu as equações que
               descrevem o movimento de foguetes e propôs o uso de propelentes líquidos,
               algo revolucionário para a época.</li>
@@ -430,22 +430,22 @@
     </section>
 
     <!-- Quiz -->
+<div class="quiz-container">
     <section class="quiz" style="display:none">
-      <div class="caixa-perguntas"></div>
-      <div class="caixa-alternativas"></div>
-      <div class="caixa-resultado">
-        <p class="texto-resultado"></p>
-        <button class="novamente-btn">Jogar novamente</button>
-      </div>
+        <div class="caixa-perguntas"></div>
+        <div class="caixa-alternativas"></div>
+        <div class="caixa-resultado">
+            <p class="texto-resultado"></p>
+            <button class="novamente-btn">Jogar novamente</button>
+        </div>
     </section>
+</div>
 
   </div>
 
   <script type="module" src="JS/perguntas.js"></script>
   <script type="module" src="JS/script.js"></script>
-  <script src="JS/tema.js"></script>
+  <script type="module" src="JS/tema.js"></script>
 </body>
 
 </html>
-
-<!--Parabéns Astronauta! Você alcançou a velocidade da luz em conhecimento! -->
