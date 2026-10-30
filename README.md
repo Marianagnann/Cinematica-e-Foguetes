@@ -20,5 +20,5 @@ O site aborda:
 
 ---
 
-✏️ Desenvolvido por [Mariana Gnann](https://github.com/marianagnann)(estrutura do site e [Ana Beatriz](https://github.com/whiskyandvoodka)(pesquisa).   
+✏️ Desenvolvido por [Mariana Gnann](https://github.com/marianagnann)(estrutura do site) e [Ana Beatriz](https://github.com/whiskyandvoodka)(pesquisa).   
 
